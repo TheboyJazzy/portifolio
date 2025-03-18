@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Personal Profile</h1>
+        <button id="theme-toggle">Toggle Dark Mode</button>
+    </header>
+    <main>
+        <img class="profile-image" src="profile.jpg" alt="Profile Picture">
+        <section class="profile-info">
+            <h2>Name:</h2> Kelvin Kajombo<br>
+            <h2>Email:</h2> <a href="mailto:kelvin.kajombo@gmail.com">kelvin.kajombo@gmail.com</a><br>
+            <h2>Phone:</h2> 088-762-9070
+        </section>
+        <section class="profile-skills">
+            <h2>Skills:</h2>
+            <ul>
+                <li>Programming in Java</li>
+                <li>Database with MySQL</li>
+                <li>Graphic Design</li>
+            </ul>
+        </section>
+        <section class="profile-description">
+            <h2>About Me:</h2>
+            <p>I’m Kelvin Kajombo, a creative and detail-oriented Graphic Designer based in Lilongwe, Malawi...</p>
+        </section>
+        <section class="contact-form">
+            <h2>Get in Touch</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea><br><br>
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
+    </main>
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Message Sent!");
+            this.reset();
+        });
+
+        document.getElementById("theme-toggle").addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+        });
+    </script>
+</body>
+</html>
