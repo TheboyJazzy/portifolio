@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Students List</title>
+</head>
+<body>
+  
+  <h1>Check the console for output</h1>
+
+  <script>
+    const students = [
+      { name: "kelvin", sex: "M", age: 23 },
+      { name: "erica", sex: "F", age: 20 },
+      { name: "alex", sex: "M", age: 18 },
+      { name: "eugenio", sex: "M", age: 24 },
+      { name: "cyrus", sex: "M", age: 22 },
+      { name: "mia", sex: "F", age: 19 },
+      { name: "leo", sex: "M", age: 21 }
+    ];
+
+    // 1. Display first 3 students
+    console.log("First 3 students:");
+    console.log(students.slice(0, 3));
+
+    // 2. Display name of the oldest student
+    const oldest = students.reduce((max, student) =>
+      student.age > max.age ? student : max
+    );
+    console.log("Oldest student:", oldest.name);
+
+    // 3. Display name of the youngest student
+    const youngest = students.reduce((min, student) =>
+      student.age < min.age ? student : min
+    );
+    console.log("Youngest student:", youngest.name);
+
+    // 4. Add a new student dynamically at the end
+    students.push({ name: "nora", sex: "F", age: 23 });
+    console.log("New student added. Updated list:");
+    console.log(students);
+  </script>
+
+</body>
+</html>
